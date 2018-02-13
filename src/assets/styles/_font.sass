@@ -1,0 +1,30 @@
+@import 'variable'
+
+=font($name, $type, $weight, $style)
+  font-family: $name
+  src: url($font-src + $name + $type + '.ttf') format('truetype')
+  font-weight: $weight
+  font-style: $style
+
+@font-face
+  +font($name, '-Light', 300, normal)
+
+@font-face
+  +font($name, '-Regular', 400, normal)
+
+@font-face
+  +font($name, '-SemiBold', 600, normal)
+
+@font-face
+  +font($name, '-Bold', 700, normal)
+
+@font-face
+  +font($name, '-ExtraBold', 800, normal)
+
+@font-face
+  +font($name, '-Black', 900, normal)
+
+body
+  font-family: $font
+  font-weight: 400
+  font-size: 1.6em

@@ -1,0 +1,7 @@
+<div class="add-board">
+  <form class="add-board__form" [formGroup]="addBoardFormGroup" (submit)="onSubmit()">
+    <mat-form-field>
+      <input type="text" placeholder="Board title" formControlName="boardTitle" matInput>
+    </mat-form-field>
+  </form>
+</div>
