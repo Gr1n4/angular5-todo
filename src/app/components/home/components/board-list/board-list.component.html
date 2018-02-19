@@ -1,3 +1,7 @@
-<ul>
-  <li *ngFor="let todo of todos">{{todo.title}}</li>
-</ul>
+<div class="board-list">
+  <div class="board-list__list">
+    <div class="board-list__item" *ngFor="let todo of todos">
+      <app-board-item [board]="todo" (onComplete)="onComplete($event)"></app-board-item>
+    </div>
+  </div>
+</div>

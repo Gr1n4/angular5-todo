@@ -5,11 +5,13 @@ export interface ITodo {
 }
 
 export class TodoModel implements ITodo {
-  id = Date.now();
+  id: number;
   title: string;
-  completed = false;
+  completed: boolean;
 
   constructor(title: string) {
+    this.id = Date.now();
     this.title = title;
+    this.completed = false;
   }
 }

@@ -5,6 +5,7 @@ import {BoardListComponent} from './components/board-list/board-list.component';
 import {HomePage} from './pages/home.page';
 import {AddBoardComponent} from './components/add-board/add-board.component';
 import {SharedModule} from '../../shared/shared.module';
+import { BoardItemComponent } from './components/board-item/board-item.component';
 
 @NgModule({
   imports: [
@@ -14,7 +15,8 @@ import {SharedModule} from '../../shared/shared.module';
   declarations: [
     HomePage,
     BoardListComponent,
-    AddBoardComponent
+    AddBoardComponent,
+    BoardItemComponent
   ]
 })
 export class HomeModule {}

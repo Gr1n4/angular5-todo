@@ -2,7 +2,7 @@ import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {RouterModule} from '@angular/router';
-import {MatFormFieldModule, MatInputModule} from '@angular/material';
+import {MatCardModule, MatFormFieldModule, MatInputModule, MatSlideToggleModule} from '@angular/material';
 
 const modules = [
   CommonModule,
@@ -10,7 +10,9 @@ const modules = [
   FormsModule,
   RouterModule,
   MatFormFieldModule,
-  MatInputModule
+  MatInputModule,
+  MatSlideToggleModule,
+  MatCardModule
 ];
 
 @NgModule({

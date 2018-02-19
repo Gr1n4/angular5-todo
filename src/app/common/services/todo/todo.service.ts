@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import {ITodo} from '../../../models/todo.model';
 import {Store} from '@ngrx/store';
 import {RootState} from '../../../reducers/index';
-import {TodoPushItemAction} from '../../../actions/todo.action';
+import {TodoPushItemAction, TodoToggleCompleteItemAction} from "../../../actions/todo.action";
 import {Observable} from 'rxjs/Observable';
 import {TodoSelectorService} from '../../../selectors/todo-selector/todo-selector.service';
 
@@ -20,6 +20,10 @@ export class TodoService {
 
   getList(): Observable<ITodo[]> {
     return this._store.select(this._todoSelector.getList());
+  }
+
+  toggleCompleteById(id: number) {
+    this._store.dispatch(new TodoToggleCompleteItemAction(id));
   }
 
 }

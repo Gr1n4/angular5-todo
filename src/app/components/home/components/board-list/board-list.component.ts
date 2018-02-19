@@ -22,7 +22,10 @@ export class BoardListComponent implements OnInit {
       });
   }
 
-  ngOnInit() {
+  ngOnInit() {}
+
+  onComplete(id: number) {
+    this._todoService.toggleCompleteById(id);
   }
 
 }

@@ -13,13 +13,13 @@ interface RouterStateUrl {
 }
 
 export interface RootState {
-  router: RouterReducerState<RouterStateUrl>;
+  // router: RouterReducerState<RouterStateUrl>;
   todo: ITodoState;
 }
 
 export const reducers: ActionReducerMap<RootState> = {
-  router: routerReducer,
+  // router: routerReducer,
   todo: todoReducer
 };
 
-export const metaReducers: MetaReducer<RootState>[] = !environment.production ? [storeFreeze] : [];
+export const metaReducers: MetaReducer<RootState>[] = !environment.production ? [] : [];

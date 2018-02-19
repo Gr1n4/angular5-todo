@@ -1,0 +1,11 @@
+<div class="board-item">
+  <mat-card>
+    <mat-card-content>
+      <h2>{{board.title}}</h2>
+      <section>
+        <mat-slide-toggle [checked]="board.completed"
+                          (change)="toggleComplete()">Complete</mat-slide-toggle>
+      </section>
+    </mat-card-content>
+  </mat-card>
+</div>
