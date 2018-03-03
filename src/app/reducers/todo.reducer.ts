@@ -1,8 +1,8 @@
-import {ITodo, TodoModel} from '../models/todo.model';
-import {TODO_TOGGLE_COMPLETE_ITEM, TODO_PUSH_ITEM, TodoAction} from "../actions/todo.action";
+import {ITodoModel, TodoModel} from '../models/todo.model';
+import {TODO_TOGGLE_COMPLETE_ITEM, TODO_PUSH_ITEM, TodoAction} from '../actions/todo.action';
 
 export interface ITodoState {
-  list: ITodo[];
+  list: ITodoModel[];
 }
 
 const initState: ITodoState = {
@@ -14,13 +14,13 @@ export function todoReducer(state: ITodoState = initState, {type, payload}: Todo
     case TODO_PUSH_ITEM:
       return {
         ...state,
-        list: [...state.list, payload as ITodo]
+        list: [...state.list, payload as ITodoModel]
       };
 
     case TODO_TOGGLE_COMPLETE_ITEM:
       return {
         ...state,
-        list: state.list.map((_todo: ITodo) => _todo.id === (payload as number) ? {..._todo, completed: !_todo.completed} : {..._todo})
+        list: state.list.map((_todo: ITodoModel) => _todo.id === (payload as number) ? {..._todo, completed: !_todo.completed} : {..._todo})
       };
     default:
       return state;

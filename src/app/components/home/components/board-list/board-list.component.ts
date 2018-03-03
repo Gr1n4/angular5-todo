@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Observable} from 'rxjs/Observable';
-import {ITodo} from '../../../../models/todo.model';
+import {ITodoModel} from '../../../../models/todo.model';
 import {TodoService} from '../../../../common/services/todo/todo.service';
 
 @Component({
@@ -9,15 +9,15 @@ import {TodoService} from '../../../../common/services/todo/todo.service';
   styleUrls: ['./board-list.component.sass']
 })
 export class BoardListComponent implements OnInit {
-  todos$: Observable<ITodo[]>;
-  todos: ITodo[];
+  todos$: Observable<ITodoModel[]>;
+  todos: ITodoModel[];
 
   constructor(
     private _todoService: TodoService
   ) {
     this.todos$ = this._todoService.getList();
     this.todos$
-      .subscribe((_todos: ITodo[]) => {
+      .subscribe((_todos: ITodoModel[]) => {
         this.todos = _todos;
       });
   }

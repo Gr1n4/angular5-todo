@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {ITodo} from '../../../models/todo.model';
+import {ITodoModel} from '../../../models/todo.model';
 import {Store} from '@ngrx/store';
 import {RootState} from '../../../reducers/index';
 import {TodoPushItemAction, TodoToggleCompleteItemAction} from "../../../actions/todo.action";
@@ -14,11 +14,11 @@ export class TodoService {
     private _store: Store<RootState>
   ) {}
 
-  pushTodoItem(todo: ITodo) {
+  pushTodoItem(todo: ITodoModel) {
     this._store.dispatch(new TodoPushItemAction(todo));
   }
 
-  getList(): Observable<ITodo[]> {
+  getList(): Observable<ITodoModel[]> {
     return this._store.select(this._todoSelector.getList());
   }
 

@@ -1,5 +1,5 @@
 import {Action} from '@ngrx/store';
-import {ITodo} from '../models/todo.model';
+import {ITodoModel} from '../models/todo.model';
 
 const prefix = '[TODO]';
 
@@ -9,12 +9,12 @@ export const TODO_TOGGLE_COMPLETE_ITEM = `${prefix} Toggle complete item`;
 
 export class TodoSetListAction implements Action {
   readonly type = TODO_SET_LIST;
-  constructor(public payload: ITodo[]) {}
+  constructor(public payload: ITodoModel[]) {}
 }
 
 export class TodoPushItemAction implements Action {
   readonly type = TODO_PUSH_ITEM;
-  constructor(public payload: ITodo) {}
+  constructor(public payload: ITodoModel) {}
 }
 
 export class TodoToggleCompleteItemAction implements Action {

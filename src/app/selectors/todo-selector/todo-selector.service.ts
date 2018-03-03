@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import {RootState} from '../../reducers/index';
 import {ITodoState} from '../../reducers/todo.reducer';
 import {createSelector, Selector} from 'reselect';
-import {ITodo} from '../../models/todo.model';
+import {ITodoModel} from '../../models/todo.model';
 
 @Injectable()
 export class TodoSelectorService {
@@ -14,7 +14,7 @@ export class TodoSelectorService {
     return state.todo;
   }
 
-  getList(): Selector<RootState, ITodo[]> {
+  getList(): Selector<RootState, ITodoModel[]> {
     return createSelector(this.getByStore, (state: ITodoState) => state.list);
   }
 }

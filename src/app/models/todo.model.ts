@@ -1,10 +1,10 @@
-export interface ITodo {
+export interface ITodoModel {
   id: number;
   title: string;
   completed: boolean;
 }
 
-export class TodoModel implements ITodo {
+export class TodoModel implements ITodoModel {
   id: number;
   title: string;
   completed: boolean;
